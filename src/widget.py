@@ -1,5 +1,5 @@
-from src.masks import get_mask_card_number
-from src.masks import get_mask_account
+from src.masks import get_mask_account, get_mask_card_number
+
 
 def mask_account_card(card_or_account_num: str) -> str:
     """Функция принимает номер карты или счёта и выводит их с соответствующей маской."""
@@ -17,8 +17,8 @@ def mask_account_card(card_or_account_num: str) -> str:
 
 def get_date(date_in: str) -> str:
     """функция, которая принимает на вход строку с датой в формате
-"2024-03-11T02:26:18.671407"
- и возвращает строку с датой в формате
-"11.03.2024"."""
+    "2024-03-11T02:26:18.671407"
+     и возвращает строку с датой в формате
+    "11.03.2024"."""
     date_out = date_in[8:10] + "." + date_in[5:7] + "." + date_in[0:4]
     return date_out
