@@ -6,6 +6,6 @@ def test_get_mask_card_number(card_num, expected):
     assert get_mask_card_number(card_num) == expected
 
 
-@pytest.mark.parametrize("account_num, expected", [("12131412421412", "**1412"), ("231412", "**1412"), (12346523, "**6523"), ("sadsdasdds", "Некорректное значение номера счёта"), ("", "Некорректное значение номера счёта")])
+@pytest.mark.parametrize("account_num, expected", [("12131412421412", "**1412"), ("231412", "**1412"), ("1212 1343 1323", "**1323"), (12346523, "**6523"), ("sadsdasdds", "Некорректное значение номера счёта"), ("", "Некорректное значение номера счёта")])
 def test_get_mask_account(account_num, expected):
     assert get_mask_account(account_num) == expected

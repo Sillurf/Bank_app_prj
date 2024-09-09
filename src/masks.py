@@ -15,7 +15,7 @@ def get_mask_card_number(card_num: Union[str, int]) -> str:
 
 def get_mask_account(account_num: Union[str, int]) -> str:
     """Функция, создающая маску номера счёта в формате **XXXX"""
-    account_num_str = str(account_num)
+    account_num_str = "".join((str(account_num)).split())
     if not account_num_str.isdigit() or len(account_num_str) < 6:
         return "Некорректное значение номера счёта"
     mask_account = "**" + account_num_str[-4:]
